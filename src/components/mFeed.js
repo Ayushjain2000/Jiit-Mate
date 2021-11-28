@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import QuesBox from "./QuesBox";
-import "./Feed.css";
+import "./mFeed.css";
 import Post from "./Post";
 import db from "../firebase";
 
-function Feed() {
+function MFeed() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ function Feed() {
   }, []);
 
   return (
-    <div className="feed">
+    <div className="mfeed">
       <QuesBox />
       {posts.map(({ id, questions }) => (
         <Post
@@ -37,4 +37,4 @@ function Feed() {
   );
 }
 
-export default Feed;
+export default MFeed;

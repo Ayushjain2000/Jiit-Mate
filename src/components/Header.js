@@ -12,8 +12,10 @@ import { Avatar, Button, Input } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
 import db, { auth } from "../firebase";
-import { ExpandMore, Link } from "@material-ui/icons";
+import { ExpandMore } from "@material-ui/icons";
 import firebase from "firebase";
+import Profile from "./pages/profile/Profile";
+import { Link } from 'react-router-dom';
 
 Modal.setAppElement("#root");
 
@@ -69,17 +71,7 @@ function Header() {
         <input type="text" placeholder="Search" />
       </div> */}
       <div className="Header__Rem">
-        <div className="Header__avatar">
-          <Avatar
-            onClick={() => auth.signOut()}
-            className="Avatar"
-            src={
-              user.photo
-                ? user.photo
-                : "https://images-platform.99static.com//_QXV_u2KU7-ihGjWZVHQb5d-yVM=/238x1326:821x1909/fit-in/500x500/99designs-contests-attachments/119/119362/attachment_119362573"
-            }
-          />
-        </div>
+        
         {/* <LanguageIcon /> */}
         <Button onClick={() => setIsModalOpen(true)}>Add Question</Button>
         <Modal
@@ -145,6 +137,22 @@ function Header() {
             </button>
           </div>
         </Modal>
+        <div className="logout" onClick={() => auth.signOut()}>
+            <h5>Log Out</h5>
+          </div>
+        <div className="Header__avatar" >
+      {/* <a href="https://console.firebase.google.com/u/0/project/jiit-mate-c9998/firestore/data/~2Fquestions~2F2gw13lWg0kSS480n6CoS">*/}
+            <Link to='/profile'>
+            <Avatar 
+            className="Avatar"
+            src={
+              user.photo
+                ? user.photo
+                : "https://images-platform.99static.com//_QXV_u2KU7-ihGjWZVHQb5d-yVM=/238x1326:821x1909/fit-in/500x500/99designs-contests-attachments/119/119362/attachment_119362573"
+            }
+          /></Link>
+          {/* </a> */}
+        </div>
       </div>
     </div>
   );

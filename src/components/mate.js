@@ -1,5 +1,5 @@
 import React from "react";
-import Feed from "./Feed.js";
+import MFeed from "./mFeed.js";
 import Header from "./Header";
 import "./mate.css";
 import Sidebar from "./Sidebar";
@@ -11,7 +11,7 @@ function Mate() {
       <Header />
       <div className="content">
         <Sidebar />
-        <Feed />
+        <MFeed />
         {/* <Widget /> */}
       </div>
     </div>

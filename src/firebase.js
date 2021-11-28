@@ -1,11 +1,15 @@
 import firebase from "firebase";
 const firebaseConfig = {
-  apiKey: "AIzaSyBtgy7M7h2TIwhwhmfSL-G8s8sR1Ylx_IQ",
-  authDomain: "jiitmate.firebaseapp.com",
-  projectId: "jiitmate",
-  storageBucket: "jiitmate.appspot.com",
-  messagingSenderId: "896925024445",
-  appId: "1:896925024445:web:d220bea6f8648b9705f7d4"
+  apiKey: "AIzaSyBoe7W-RoYOZKEj-0IJ1C7QFN7-9bCA8fY",
+  authDomain: "jiit-mate-c9998.firebaseapp.com",
+  databaseURL: "https://jiit-mate-c9998-default-rtdb.firebaseio.com",
+  projectId: "jiit-mate-c9998",
+  storageBucket: "jiit-mate-c9998.appspot.com",
+  messagingSenderId: "1044532676171",
+  appId: "1:1044532676171:web:7c816074905f789f6c2fce",
+  measurementId: "G-5QDKMJP87K"
+
+  
 };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);

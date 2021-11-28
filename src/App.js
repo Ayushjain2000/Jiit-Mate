@@ -5,6 +5,8 @@ import Login from "./components/auth/Login";
 import Mate from "./components/mate";
 import { login, logout, selectUser } from "./features/userSlice";
 import { auth } from "./firebase";
+import { Route, Switch } from 'react-router-dom';
+import Profile from "./components/pages/profile/Profile";
 
 function App() {
   const user = useSelector(selectUser);
@@ -27,7 +29,16 @@ function App() {
       console.log(authUser);
     });
   }, [dispatch]);
-  return <div className="App">{user ? <Mate /> : <Login />}</div>;
+  return <div className="App">
+    <Switch>
+      <Route path='/profile'>
+        <Profile />
+      </Route>
+      <Route path='/'>
+        {user ? <Mate /> : <Login />}
+      </Route>
+    </Switch>
+  </div>;
 }
 
 export default App;
