@@ -1,6 +1,11 @@
+:root {
+  --appBG: #1b262c;
+  /* --appBG: #000000; */
+}
 .App {
   margin: 0;
-  background-color: rgb(241, 241, 241);
+  background-color: var(--appBG);
+
   height: auto;
   width: auto;
 }

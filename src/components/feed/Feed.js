@@ -1,17 +1,50 @@
-import Post from "../post/post";
-import Share from "../share/Share";
+import React, { useEffect, useState } from "react";
+import QuesBox from "../QuesBox";
 import "./feed.css";
-import { Posts } from "../dummyData";
+import Post from "../Post";
+import db, { auth } from "../../firebase";
+import { selectUser } from "../../features/userSlice";
+import { useSelector } from "react-redux";
+import ProfilePost from "../ProfilePost";
 
-export default function Feed() {
+function Feed() {
+  const [posts, setPosts] = useState([]);
+  const user = useSelector(selectUser);
+
+  useEffect(() => {
+    db.collection("questions")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) =>
+        setPosts(
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            questions: doc.data(),
+          }))
+        )
+      );
+  }, []);
+
+
   return (
-    <div className="feedW">
-      <div className="feedWrapper">
-        <Share />
-        {Posts.map((p) => (
-          <Post key={p.id} post={p} />
-        ))}
-      </div>
+    <div className="feed">
+      <QuesBox />
+
+      {posts.map(({ id, questions }) =>
+        questions.user.email === user.email ? (
+          <ProfilePost
+            key={id}
+            Id={id}
+            question={questions.question}
+            imageUrl={questions.imageUrl}
+            timestamp={questions.timestamp}
+            users={questions.user}
+            currUser={user.email}
+            usersEmail={questions.user.email}
+          />
+        ) : null
+      )}
     </div>
   );
 }
+
+export default Feed;

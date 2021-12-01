@@ -12,9 +12,16 @@ import Modal from "react-modal";
 import db from "../firebase";
 import { selectQuestionId, setQuestionInfo } from "../features/questionSlice";
 import firebase from "firebase";
-import MyButton from "../UI/MyButton";
 
-function Post({ Id, question, imageUrl, timestamp, users, currUser }) {
+function ProfilePost({
+  Id,
+  question,
+  imageUrl,
+  timestamp,
+  users,
+  currUser,
+  usersEmail,
+}) {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
@@ -68,9 +75,6 @@ function Post({ Id, question, imageUrl, timestamp, users, currUser }) {
   };
 
   return (
-    // <div>
-    //   {users.email == currUser ? <p>{question}</p> : <p>NOPE</p>}
-    // </div>
     <div
       className="post"
       onClick={() =>
@@ -100,7 +104,8 @@ function Post({ Id, question, imageUrl, timestamp, users, currUser }) {
       <div className="post__body">
         <div className="post__question">
           <p>{question}</p>
-          {/* 
+
+          {/* {usersEmail == currUser ? <p>{1}</p> : null} */}
           {/* {<p> {questions.email} </p>} */}
           {/*-----------------------------*/}
 
@@ -206,7 +211,7 @@ function Post({ Id, question, imageUrl, timestamp, users, currUser }) {
       <div className="post__footer">
       <span onClick={likesIncrementHandler}>
         <div className="post__footerAction">
-          <ArrowUpwardOutlinedIcon />
+          <ArrowUpwardOutlinedIcon /> 
             {likes}
             </div>
         </span>
@@ -232,4 +237,4 @@ function Post({ Id, question, imageUrl, timestamp, users, currUser }) {
   );
 }
 
-export default Post;
+export default ProfilePost;

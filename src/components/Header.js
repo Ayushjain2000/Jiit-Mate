@@ -15,7 +15,7 @@ import db, { auth } from "../firebase";
 import { ExpandMore } from "@material-ui/icons";
 import firebase from "firebase";
 import Profile from "./pages/profile/Profile";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 Modal.setAppElement("#root");
 
@@ -46,34 +46,31 @@ function Header() {
 
   return (
     <div className="Header">
-      <div className="Header__logo">
-        JIIT Mate
-      </div>
+      {/*-----------*/}
+      <div className="Header__logo">JIIT-MATE</div>
+      {/*-----------*/}
       <div className="Header__icons">
-        <div className="active Header__icon">
-          <HomeIcon />
-        </div>
+        <Link to="/mFeed">
+          <div className="active Header__icon">
+            <HomeIcon />
+          </div>
+        </Link>
+
         <div className="Header__icon">
           <FeaturedPlayListOutlinedIcon />
         </div>
-        {/* <div className="Header__icon">
-          <AssignmentTurnedInOutlinedIcon />
-        </div> */}
-        {/* <div className="Header__icon">
-          <PeopleAltOutlinedIcon />
-        </div> */}
         <div className="Header__icon">
           <NotificationsOutlinedIcon />
         </div>
       </div>
-      {/* <div className="Header__input">
-        <SearchIcon />
-        <input type="text" placeholder="Search" />
-      </div> */}
+      {/*-----------*/}
       <div className="Header__Rem">
-        
-        {/* <LanguageIcon /> */}
-        <Button onClick={() => setIsModalOpen(true)}>Add Question</Button>
+        {/*-----------*/}
+        <Button onClick={() => setIsModalOpen(true)} className="addButton">
+          ADD QUESTION
+        </Button>
+
+        {/*-----------*/}
         <Modal
           isOpen={IsmodalOpen}
           onRequestClose={() => setIsModalOpen(false)}
@@ -92,7 +89,7 @@ function Header() {
           }}
         >
           <div className="modal__title">
-            <h5>Add Question</h5>
+            <h5>ADD QUESTION</h5>
             <h5>Share Link</h5>
           </div>
           <div className="modal__info">
@@ -137,22 +134,25 @@ function Header() {
             </button>
           </div>
         </Modal>
+        {/*-----------*/}
         <div className="logout" onClick={() => auth.signOut()}>
-            <h5>Log Out</h5>
-          </div>
-        <div className="Header__avatar" >
-      {/* <a href="https://console.firebase.google.com/u/0/project/jiit-mate-c9998/firestore/data/~2Fquestions~2F2gw13lWg0kSS480n6CoS">*/}
-            <Link to='/profile'>
-            <Avatar 
-            className="Avatar"
-            src={
-              user.photo
-                ? user.photo
-                : "https://images-platform.99static.com//_QXV_u2KU7-ihGjWZVHQb5d-yVM=/238x1326:821x1909/fit-in/500x500/99designs-contests-attachments/119/119362/attachment_119362573"
-            }
-          /></Link>
-          {/* </a> */}
+          <h5>LOG OUT</h5>
         </div>
+        {/*-----------*/}
+        <div className="Header__avatar">
+          {/* <a href="https://console.firebase.google.com/u/0/project/jiit-mate-c9998/firestore/data/~2Fquestions~2F2gw13lWg0kSS480n6CoS">*/}
+          <Link to="/profile">
+            <Avatar
+              className="Avatar"
+              src={
+                user.photo
+                  ? user.photo
+                  : "https://images-platform.99static.com//_QXV_u2KU7-ihGjWZVHQb5d-yVM=/238x1326:821x1909/fit-in/500x500/99designs-contests-attachments/119/119362/attachment_119362573"
+              }
+            />
+          </Link>
+        </div>
+        {/*-----------*/}
       </div>
     </div>
   );

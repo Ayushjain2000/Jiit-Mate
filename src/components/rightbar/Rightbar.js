@@ -26,22 +26,23 @@ export default function Rightbar({ profile }) {
   const ProfileRightbar = () => {
     return (
       <>
-        <h4 className="rightbarTitle">User information</h4>
+        <h4 className="rightbarTitle">ABOUT</h4>
+
         <div className="rightbarInfo">
           <div className="rightbarInfoItem">
-            <span className="rightbarInfoKey">City:</span>
+            <span className="rightbarInfoKey">CITY:</span>
             <span className="rightbarInfoValue">New York</span>
           </div>
           <div className="rightbarInfoItem">
-            <span className="rightbarInfoKey">From:</span>
+            <span className="rightbarInfoKey">FROM:</span>
             <span className="rightbarInfoValue">Madrid</span>
           </div>
           <div className="rightbarInfoItem">
-            <span className="rightbarInfoKey">Relationship:</span>
-            <span className="rightbarInfoValue">Single</span>
+            <span className="rightbarInfoKey">Work as:</span>
+            <span className="rightbarInfoValue">Student</span>
           </div>
         </div>
-        <h4 className="rightbarTitle">User friends</h4>
+        {/* <h4 className="rightbarTitle">User friends</h4>
         <div className="rightbarFollowings">
           <div className="rightbarFollowing">
             <img
@@ -89,9 +90,9 @@ export default function Rightbar({ profile }) {
               alt=""
               className="rightbarFollowingImg"
             />
-            <span className="rightbarFollowingName">John Carter</span>
-          </div>
-        </div>
+            <span className="rightbarFollowingName">John Carter</span> */}
+        {/* </div> */}
+        {/* </div> */}
       </>
     );
   };
