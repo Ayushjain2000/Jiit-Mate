@@ -7,6 +7,8 @@ import { login, logout, selectUser } from "./features/userSlice";
 import { auth } from "./firebase";
 import { Route, Switch } from 'react-router-dom';
 import Profile from "./components/pages/profile/Profile";
+import Info from "./components/info";
+import Header from "./components/Header";
 
 function App() {
   const user = useSelector(selectUser);
@@ -31,13 +33,25 @@ function App() {
   }, [dispatch]);
   return <div className="App">
     <Switch>
-      <Route path='/profile'>
+      <Route path='/profile' exact>
         <Profile />
       </Route>
-      <Route path='/'>
+      <Route path={['/','/mFeed']} exact>
         {user ? <Mate /> : <Login />}
       </Route>
+
+      <Route path='/info' exact>
+        <div>
+        <Header/>
+        </div>
+        <div className='information'>
+          <Info/>
+        </div>
+          
+        
+        </Route>
     </Switch>
+   
   </div>;
 }
 

@@ -1,0 +1,36 @@
+section
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container
+{
+    border: 5px outset var(--textColour);
+    width:600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--postBG);
+    border-radius: 8px;
+    padding:2em;
+    box-sizing: border-box;
+}
+.formBx
+{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.inpBox
+{
+    margin:1em;
+    height:2em;
+}
+h2
+{
+    margin: 10px;
+    font-family: var(--vintageText);
+}

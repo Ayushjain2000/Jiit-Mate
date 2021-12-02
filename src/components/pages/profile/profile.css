@@ -53,16 +53,21 @@
   font-family: "Outfit", sans-serif;
 }
 
+
+/*--------------AFTER IMAGES(FEED + PROFILE INFO)-------------*/
 .profileRightBottom {
     display: flex;
-    flex-direction: column; 
+    flex-direction: row; 
     flex: 0.7;
   }
+
+
   
   .content {
     display: flex;
     justify-content: center;
     margin-top: 50px;
+    padding: 10px;
     
   }
   

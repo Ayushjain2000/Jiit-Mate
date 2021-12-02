@@ -5,7 +5,6 @@ import Post from "../Post";
 import db, { auth } from "../../firebase";
 import { selectUser } from "../../features/userSlice";
 import { useSelector } from "react-redux";
-import ProfilePost from "../ProfilePost";
 
 function Feed() {
   const [posts, setPosts] = useState([]);
@@ -24,14 +23,13 @@ function Feed() {
       );
   }, []);
 
-
   return (
     <div className="feed">
-      <QuesBox />
+      <p className="postHeading">YOUR QUESTIONS</p>
 
       {posts.map(({ id, questions }) =>
         questions.user.email === user.email ? (
-          <ProfilePost
+          <Post
             key={id}
             Id={id}
             question={questions.question}

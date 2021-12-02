@@ -21,10 +21,12 @@
 
   background-color: var(--postBG);
   background-image: var(--postBG);
-  margin-top: 10px;
+  margin-top: 13px;
   border: 1px solid var(--postBG);
   border-radius: 10px;
-  box-shadow: 0px 5px 8px -9px solid rgab(0, 0, 0, 0.5);
+  /* box-shadow: 0px 5px 8px -9px solid rgab(0, 0, 0, 0.5); */
+  box-shadow: 1px 1px 5px 0.5px var(--lighterShadeBlue);
+  border: 4px outset var(--textColour);
 }
 
 /*------------POST INFO----------------*/

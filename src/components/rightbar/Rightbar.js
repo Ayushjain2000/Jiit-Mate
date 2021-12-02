@@ -1,7 +1,7 @@
 import "./rightbar.css";
 import { Users } from "../dummyData";
-import Online from "../online/Online";
-
+import { Link, Route } from "react-router-dom";
+import Info from "../info";
 export default function Rightbar({ profile }) {
   const HomeRightbar = () => {
     return (
@@ -12,13 +12,13 @@ export default function Rightbar({ profile }) {
             <b>Pola Foster</b> and <b>3 other friends</b> have a birhday today.
           </span>
         </div>
-        <img className="rightbarAd" src="assets/ad.png" alt="" />
+        {/* <img className="rightbarAd" src="assets/ad.png" alt="" />
         <h4 className="rightbarTitle">Online Friends</h4>
         <ul className="rightbarFriendList">
           {Users.map((u) => (
             <Online key={u.id} user={u} />
           ))}
-        </ul>
+        </ul> */}
       </>
     );
   };
@@ -100,7 +100,9 @@ export default function Rightbar({ profile }) {
     <div className="rightbar">
       <div className="rightbarWrapper">
         {profile ? <ProfileRightbar /> : <HomeRightbar />}
+        <Link to = '/info'> <button className="editProfile">EDIT PROFILE</button></Link>
       </div>
+      
     </div>
   );
 }

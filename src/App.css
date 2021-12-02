@@ -7,5 +7,18 @@
   background-color: var(--appBG);
 
   height: auto;
+
   width: auto;
+  
+
+}
+
+.information
+{
+  
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(3.5em);
 }

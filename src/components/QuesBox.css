@@ -9,8 +9,8 @@
   display: flex;
   flex-direction: column;
   padding: 10px;
-  border: 1px solid var(--boxBG);
-  background-color: var(--boxBG);
+  border: 4px outset var(--textColour); 
+   background-color: var(--boxBG);
   border-radius: 5px;
   cursor: pointer;
   font-family: var(--textFontFamily);

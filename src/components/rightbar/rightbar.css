@@ -4,14 +4,23 @@ h4 {
   margin: 10px;
 }
 .rightbar {
-  display: flex;
-  justify-content: right;
+  display: flex; 
+  justify-content: top;
   align-items: top;
-  flex: 3.5;
+  flex-direction: column;
+  /* flex: 3.5; */
+  border: 5px outset var(--textColor);
+  border-radius: 7px;
+  width:300px;
 }
 
 .rightbarWrapper {
-  padding: 20px 20px 0 0;
+  padding: 22px 0px 0 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
 }
 
 .birthdayContainer {
@@ -54,12 +63,14 @@ h4 {
 
 /*---------------------------------*/
 .rightbarInfo {
+
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   font-family: "Outfit", sans-serif;
   font-weight: 900;
   font-size: 20px;
+  
 }
 
 .rightbarInfoItem {
@@ -96,3 +107,24 @@ h4 {
   object-fit: cover;
   border-radius: 5px;
 } 
+
+
+.editProfile
+{
+  background-color: var(--appBG);
+  font-family: var(--vintageText);
+  font-size:10px;
+  padding:10px;
+  border: 4px outset var(--textColor);
+  color: var(--textColor);
+  border-radius: 7px;
+  cursor: pointer;
+}
+.editProfile:hover
+{
+  color:var(--appBG);
+  background-color: var(--textColor);
+  transform: scale(1.2);
+  transform-origin: center;
+  transition: 0.4s all;
+}

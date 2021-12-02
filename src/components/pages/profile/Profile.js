@@ -35,12 +35,16 @@ export default function Profile() {
             </div>
             {/*--------------------------------------*/}
           </div>
+
+
           <div className="content">
-          <div className="profileRightBottom">
-            <Feed />
+           <div className="profileRightBottom">
+            <Feed className="ProfileFeedCss"/>
             <Rightbar profile />
+           </div>
           </div>
-          </div>
+
+
         </div>
         {/*--------------------------------------*/}
       </div>

@@ -70,7 +70,7 @@ function Header() {
           ADD QUESTION
         </Button>
 
-        {/*-----------*/}
+        {/*-------ADD QESTION MODAL-------------------------------*/}
         <Modal
           isOpen={IsmodalOpen}
           onRequestClose={() => setIsModalOpen(false)}
@@ -79,7 +79,7 @@ function Header() {
             overlay: {
               width: 700,
               height: 600,
-              backgroundColor: "rgba(0,0,0,0.8)",
+              backgroundColor: "black",
               zIndex: "1000",
               top: "50%",
               left: "50%",
@@ -88,10 +88,12 @@ function Header() {
             },
           }}
         >
+          {/*-------MODAL TITLE-------------------------------------*/}
           <div className="modal__title">
             <h5>ADD QUESTION</h5>
-            <h5>Share Link</h5>
+            {/* <h5>Share Link</h5> */}
           </div>
+          {/*-------MODAL INFO-------------------------------------*/}
           <div className="modal__info">
             <Avatar
               className="avatar"
@@ -102,12 +104,14 @@ function Header() {
               }
             />
             <p>{user.disPlayName ? user.disPlayName : user.email} asked</p>
-            <div className="modal__scope">
-              <PeopleAltOutlinedIcon />
-              <p>Public</p>
-              <ExpandMore />
-            </div>
+            {/* <div className="modal__scope">
+              {/* <PeopleAltOutlinedIcon /> */}
+            {/* <p>Public</p> */}
+            {/* <ExpandMore /> 
+            </div> */}
           </div>
+
+          {/*-------MODAL FIELD-------------------------------------*/}
           <div className="modal__Field">
             <Input
               value={input}
@@ -116,15 +120,36 @@ function Header() {
               placeholder="Start your question with 'What', 'How', 'Why', etc. "
             />
             <div className="modal__fieldLink">
-              <Link />
-              <input
+              {/* <Link /> */}
+              {/* <input
                 value={inputUrl}
                 onChange={(e) => setInputUrl(e.target.value)}
                 type="text"
-                placeholder="Optional: inclue a link that gives context"
-              ></input>
+                placeholder="Optional: inclue a link th
+                at gives context"
+              ></input> */}
+              <form>
+                <input
+                  type="checkbox"
+                  id="JODC"
+                  name="JODC"
+                  value="JODC"
+                ></input>
+                <label for="JODC">JODC</label>
+                <br />
+                <input
+                  type="checkbox"
+                  id="JODC"
+                  name="JODC"
+                  value="JODC"
+                ></input>
+                <label for="JODC">JODC</label>
+                <br />
+              </form>
             </div>
           </div>
+
+          {/*-------MODAL BUTTONS-------------------------------------*/}
           <div className="modal__buttons">
             <button className="cancle" onClick={() => setIsModalOpen(false)}>
               Cancel
@@ -134,6 +159,9 @@ function Header() {
             </button>
           </div>
         </Modal>
+
+        {/*-------MODAL ENDS-------------------------------------*/}
+
         {/*-----------*/}
         <div className="logout" onClick={() => auth.signOut()}>
           <h5>LOG OUT</h5>
