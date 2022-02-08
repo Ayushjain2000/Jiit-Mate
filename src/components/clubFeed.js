@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import QuesBox from "./QuesBox";
-import "./mFeed.css";
+import "./clubFeed";
 import Post from "./Post";
 import db from "../firebase";
 
-function MFeed() {
+function ClubFeed(props) {
   const [posts, setPosts] = useState([]);
+  // const [new,setnew]=useState();
 
   useEffect(() => {
     db.collection("questions")
@@ -21,23 +22,25 @@ function MFeed() {
   }, []);
 
   return (
-    <div className="mfeed">
-      {/* {console.log(posts.questions.quesClub)}; */}
+    <div className="clubfeed">
+    
       <QuesBox />
-      {console.log(posts)}
-      {posts.map(({ id, questions }) => (
-         
-        <Post
+
+      
+      {posts.map(({ id, questions }) => {
+        if(questions.quesClub===props.name) {
+          return <Post
           key={id}
           Id={id}
           question={questions.question}
           imageUrl={questions.imageUrl}
           timestamp={questions.timestamp}
           users={questions.user}
-        ></Post>
-      ))}
+        />
+        }
+})}
     </div>
   );
 }
 
-export default MFeed;
+export default ClubFeed;

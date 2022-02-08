@@ -1,23 +1,14 @@
 import React from "react";
 import SidebarOptions from "./SidebarOptions";
 import "./Sidebar.css";
+import {useState} from 'react';
 
-const clubs=[
-{
-  clubName:'JODC'
-},
-{
-  clubName:'ABHIVAYAKTI'
-},
-{
-  clubName:'AURA PHOTOGRAPHY'
-}
-];
 
-function Sidebar() {
+
+function Sidebar(props) {
   return (
     <div className="sidebar">
-      <SidebarOptions clubss={clubs[0]}/>
+      <SidebarOptions changeName={props.changeName}/>
     </div>
   );
 }

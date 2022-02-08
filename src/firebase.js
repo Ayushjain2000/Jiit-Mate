@@ -1,16 +1,36 @@
 import firebase from "firebase";
+import "firebase/firestore";
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBoe7W-RoYOZKEj-0IJ1C7QFN7-9bCA8fY",
-  authDomain: "jiit-mate-c9998.firebaseapp.com",
-  databaseURL: "https://jiit-mate-c9998-default-rtdb.firebaseio.com",
-  projectId: "jiit-mate-c9998",
-  storageBucket: "jiit-mate-c9998.appspot.com",
-  messagingSenderId: "1044532676171",
-  appId: "1:1044532676171:web:7c816074905f789f6c2fce",
-  measurementId: "G-5QDKMJP87K"
+  apiKey: "AIzaSyDKaSVngDaeF7kXikW9iGbpTqTVM8Gv1YE",
+  authDomain: "mate-e8825.firebaseapp.com",
+  projectId: "mate-e8825",
+  storageBucket: "mate-e8825.appspot.com",
+  messagingSenderId: "473261662992",
+  appId: "1:473261662992:web:c0ef280b24a4bda207bb95",
+  measurementId: "G-1P7S395KNW"
 
   
 };
+
+// const firebaseConfig = {
+//   apiKey: "AIzaSyBL3XWCUixWk8f_vUqA-knGwjJOTH8PrBg",
+//   authDomain: "jiit-mate-288ea.firebaseapp.com",
+//   databaseURL: "https://jiit-mate-288ea-default-rtdb.firebaseio.com",
+//   projectId: "jiit-mate-288ea",
+//   storageBucket: "jiit-mate-288ea.appspot.com",
+//   messagingSenderId: "137058529611",
+//   appId: "1:137058529611:web:ef99fc9b19467fb98578ce"
+// };
+// const firebaseConfig = {
+//   apiKey: "AIzaSyBL3XWCUixWk8f_vUqA-knGwjJOTH8PrBg",
+//   authDomain: "jiit-mate-288ea.firebaseapp.com",
+//   databaseURL: "https://jiit-mate-288ea-default-rtdb.firebaseio.com",
+//   projectId: "jiit-mate-288ea",
+//   storageBucket: "jiit-mate-288ea.appspot.com",
+//   messagingSenderId: "137058529611",
+//   appId: "1:137058529611:web:ef99fc9b19467fb98578ce"
+// };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();

@@ -9,6 +9,7 @@ import { Route, Switch } from 'react-router-dom';
 import Profile from "./components/pages/profile/Profile";
 import Info from "./components/info";
 import Header from "./components/Header";
+import ClubsPage from "./components/clubsPage";
 
 function App() {
   const user = useSelector(selectUser);
@@ -47,9 +48,12 @@ function App() {
         <div className='information'>
           <Info/>
         </div>
-          
-        
         </Route>
+
+        {/* <Route path='/clubsPage' exact>
+          <ClubsPage/>
+        </Route> */}
+
     </Switch>
    
   </div>;

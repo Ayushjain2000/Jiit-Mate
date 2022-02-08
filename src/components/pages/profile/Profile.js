@@ -4,14 +4,41 @@ import Header from "../../Header";
 import Leftbar from "../../leftbar/leftbar";
 import Feed from "../../feed/Feed";
 import Rightbar from "../../rightbar/Rightbar";
+import { useState,useEffect} from "react";
+import { useDispatch, useSelector } from "react-redux";
+import firebase from "firebase";
 
-export default function Profile() {
+import db from "../../../firebase";
+
+import {selectUser} from "../../../features/userSlice";
+
+ function Profile() {
+
+  const user = useSelector(selectUser);
+  const [customersData, setCustomersData] = useState([]);
+
+
+  useEffect(() => {
+    db.collection("form").onSnapshot((snapshot) => {
+      setCustomersData(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+      );
+    });
+    console.log({ customersData });
+  }, []);
+
+
+
+
   return (
     <>
       {/* <Topbar /> */}
       <Header />
       <div className="profile">
-        <Leftbar />
+        {/* <Leftbar /> */}
         {/*------------------------------------*/}
         <div className="profileRight">
           <div className="profileRightTop">
@@ -30,8 +57,8 @@ export default function Profile() {
 
             {/*--------------------------------------*/}
             <div className="profileInfo">
-              <h4 className="profileInfoName">ANTASH SHRIVASTAVA</h4>
-              {/* <span className="profileInfoDesc">Whats poppin ?</span> */}
+              <h4 className="profileInfoName">AYUSH JAIN{console.log(customersData)}</h4>
+              <span className="profileInfoDesc">HELLO HELLO !</span>
             </div>
             {/*--------------------------------------*/}
           </div>
@@ -51,3 +78,6 @@ export default function Profile() {
     </>
   );
 }
+
+
+export default Profile;

@@ -62,8 +62,8 @@ function Post({ Id, question, imageUrl, timestamp, users, currUser }) {
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       });
     }
-    console.log(questionId);
-    setAnswer("");
+    // console.log(questionId);
+     setAnswer("");
     setIsModalOpen(false);
   };
 

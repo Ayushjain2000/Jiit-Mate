@@ -12,13 +12,7 @@ export default function Rightbar({ profile }) {
             <b>Pola Foster</b> and <b>3 other friends</b> have a birhday today.
           </span>
         </div>
-        {/* <img className="rightbarAd" src="assets/ad.png" alt="" />
-        <h4 className="rightbarTitle">Online Friends</h4>
-        <ul className="rightbarFriendList">
-          {Users.map((u) => (
-            <Online key={u.id} user={u} />
-          ))}
-        </ul> */}
+       
       </>
     );
   };
@@ -30,69 +24,19 @@ export default function Rightbar({ profile }) {
 
         <div className="rightbarInfo">
           <div className="rightbarInfoItem">
-            <span className="rightbarInfoKey">CITY:</span>
-            <span className="rightbarInfoValue">New York</span>
+            <span className="rightbarInfoKey">Branch:</span>
+            <span className="rightbarInfoValue">CSE</span>
           </div>
           <div className="rightbarInfoItem">
-            <span className="rightbarInfoKey">FROM:</span>
-            <span className="rightbarInfoValue">Madrid</span>
+            <span className="rightbarInfoKey">Year:</span>
+            <span className="rightbarInfoValue">3</span>
           </div>
           <div className="rightbarInfoItem">
-            <span className="rightbarInfoKey">Work as:</span>
-            <span className="rightbarInfoValue">Student</span>
+            <span className="rightbarInfoKey">Sector:</span>
+            <span className="rightbarInfoValue">128</span>
           </div>
         </div>
-        {/* <h4 className="rightbarTitle">User friends</h4>
-        <div className="rightbarFollowings">
-          <div className="rightbarFollowing">
-            <img
-              src="assets/person/1.jpeg"
-              alt=""
-              className="rightbarFollowingImg"
-            />
-            <span className="rightbarFollowingName">John Carter</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img
-              src="assets/person/2.jpeg"
-              alt=""
-              className="rightbarFollowingImg"
-            />
-            <span className="rightbarFollowingName">John Carter</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img
-              src="assets/person/3.jpeg"
-              alt=""
-              className="rightbarFollowingImg"
-            />
-            <span className="rightbarFollowingName">John Carter</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img
-              src="assets/person/4.jpeg"
-              alt=""
-              className="rightbarFollowingImg"
-            />
-            <span className="rightbarFollowingName">John Carter</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img
-              src="assets/person/5.jpeg"
-              alt=""
-              className="rightbarFollowingImg"
-            />
-            <span className="rightbarFollowingName">John Carter</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img
-              src="assets/person/6.jpeg"
-              alt=""
-              className="rightbarFollowingImg"
-            />
-            <span className="rightbarFollowingName">John Carter</span> */}
-        {/* </div> */}
-        {/* </div> */}
+        
       </>
     );
   };
